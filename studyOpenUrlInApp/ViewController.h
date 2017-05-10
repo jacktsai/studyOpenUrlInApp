@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface ViewController : UIViewController <UITextViewDelegate>
+@property (weak, nonatomic) UITextView *textView;
 @end
 

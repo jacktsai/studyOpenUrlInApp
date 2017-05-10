@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "studyOpenUrlInApp-Swift.h"
 
 @interface ViewController ()
 
@@ -14,16 +15,12 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
+    MyWebViewController *vc = [[MyWebViewController alloc] init];
+    vc.url = URL;
+    [self presentViewController:vc animated:YES completion:nil];
+    
+    return NO;
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
